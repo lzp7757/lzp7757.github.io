@@ -1,0 +1,161 @@
+body {
+	margin: 0;
+	/* 外边距 */
+}
+
+ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+li {
+	list-style: none;
+}
+
+.wrap {
+	width: 1140px;
+	margin: 0 auto;
+}
+
+.top {
+	background: rgba(0, 0, 0, 0.41);
+	overflow: hidden;
+	/* 块级元素水平居中,左右两边外边距自动 */
+}
+
+.top ul {
+	float: left;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.top ul li {
+	float: left;
+	margin: 0 10px;
+	line-height: 58px;
+	/* 行高 */
+}
+
+.top ul li a {
+	text-decoration: none;
+	color: white;
+	transition: all .3s;
+}
+
+/* 伪类选择器 */
+.top ul li a:hover {
+	color: #FAEE0D;
+	border-top: 5px solid #FAEE0D;
+}
+
+/* 伪元素html里面不存在的元素 css生成的conten配合使用 */
+.top ul li:after {
+	content: '/';
+	font-style: normal;
+	margin-left: 20px;
+	color: white;
+}
+
+/* 过滤选择器 最后一个 清除掉最后一个后面的斜杠 */
+.top ul li:last-child:after {
+	content: none;
+}
+
+/* 第一个菜单项默认样式 home */
+.top ul li:last-child a {
+	color: #FAEE0D;
+	border-top: 4px solid #FAEE0D;
+}
+
+.top form {
+	float: right;
+	margin-top: 13px;
+	position: relative;
+	top: 0;
+	left: 0;
+	margin-right: 10px;
+}
+
+.top form input {
+	height: 32px;
+	color: white;
+	background: none;
+	font-size: 14px;
+	border: 1px solid white;
+	outline: none;
+	padding: 0 10px;
+	/* 一到四个值 一个上下左右；两个：上下 左右；四个：上右下左 */
+}
+
+.top form input:last-child {
+	padding: 0px;
+	width: 22px;
+	height: 22px;
+	background: url(../img/search.png);
+	/* 背景图片 */
+	background-repeat: no-repeat;
+	/* 背景图片重复 */
+	background-position: center;
+	/* 背景图片位置 */
+	border: none;
+	position: absolute;
+	top: 6px;
+	right: 6px;
+}
+
+.header {
+	background: url(../img/banner.jpg) no-repeat;
+	background-size: cover;
+	padding: 10px;
+}
+
+.header h1 {
+	text-align: center;
+	color: white;
+	position: relative;
+	font-size: 70px;
+	margin-top: 200px;
+	font-family: 'Lobster', cursive;
+}
+
+.header h1 span {
+	border-top: 3px solid white;
+	border-bottom: 3px solid white;
+}
+.coutainer{
+	width: 1140px;
+	margin: 0 auto;
+}
+.contact h3{
+	text-align: center;
+	font-size: 3.5em;
+	color: #394c53;
+}
+.maine .coutainer .onfocus{
+	width: 32.3%;
+	float: left;
+	margin-right: 10px;
+}
+.maine .coutainer span{
+	font-size: 1.2em;
+	color: #000000;
+}
+.maine .coutainer .onfocus input{
+	width: 100%;
+	padding: 1em;
+	border: 1px solid #EEE;
+	box-sizing: border-box;
+}
+.maine .coutainer .message{
+	width: 100%;
+}
+.maine .coutainer .message textarea{
+	width: 100%;
+	border: 1px solid #EEE;
+	min-height: 320px;
+	
+}
+
+

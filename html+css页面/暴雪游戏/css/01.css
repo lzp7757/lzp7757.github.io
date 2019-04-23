@@ -1,0 +1,162 @@
+body {
+	margin: 0;
+}
+
+li {
+	list-style: none;
+}
+
+ul {
+	padding: 0;
+}
+
+.zhanwang {
+	background: url(../img/login-background-1920.3f7pb.jpg);
+	background-size: cover;
+	width: 100%;
+	height: auto;
+	overflow: hidden;
+}
+
+.zhanwang .smort {
+	text-align: center;
+	max-width: 1200px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.zhanwang .smort .blizzard {
+	margin-top: 55px;
+	margin-bottom: 40px;
+}
+
+.zhanwang .smort .input {
+	width: 360px;
+	height: auto;
+	display: inline-block;
+}
+
+.zhanwang .smort .input .login {
+	margin-bottom: 15px;
+}
+
+.smort .input form input {
+	border: 1px solid rgba(255, 255, 255, 0.3);
+	color: beige;
+	background: rgba(0, 0, 0, 0.5);
+	width: 100%;
+	height: 40px;
+	font-size: 17px;
+	padding: 0 10px;
+	box-sizing: border-box;
+}
+
+.smort .input .landing form input {
+	background-color: #0e86ca;
+	border: 1px solid #10a1de;
+	font-size: 17px;
+	color: white;
+	cursor: pointer;
+}
+
+.smort .input .landing form input:hover {
+	background-color: #00aeff;
+}
+
+.smort .input .thirdparty {
+	color: rgba(255, 255, 255, .3);
+	padding: 10px 0;
+	width: 100%;
+	position: relative;
+	display: inline-block;
+}
+
+.smort .input .thirdparty span:before {
+	width: 90px;
+	left: 0;
+	content: "";
+	height: 1px;
+	top: 50%;
+	position: absolute;
+	background-color: rgba(255, 255, 255, .1);
+}
+
+.smort .input .thirdparty span:after {
+	width: 90px;
+	right: 0;
+	content: "";
+	height: 1px;
+	top: 50%;
+	position: absolute;
+	background-color: rgba(255, 255, 255, .1);
+}
+
+.smort .input .control form input {
+	background: #d60000;
+	color: white;
+	cursor: pointer;
+}
+
+.smort .input .control form input:hover {
+	background: #f70e0e;
+}
+
+.smort .help ul li {
+	margin-bottom: 15px;
+}
+
+.smort .help ul li a {
+	color: #00aeff;
+	text-decoration: none;
+}
+
+.smort .help ul li a:hover {
+	color: white;
+}
+
+.smort .footer {
+	padding-top: 120px;
+}
+
+.smort .footer .nav {
+	text-align: center;
+}
+
+.smort .footer .nav ul li {
+	display: inline-block;
+}
+
+.smort .footer .nav ul li a {
+	text-decoration: none;
+	color: rgba(255, 255, 255, 0.7);
+	font-size: 13px;
+	padding: 10px;
+}
+
+.smort .footer .nav ul li a:hover {
+	color: white;
+}
+
+.smort .footer .nav ul li:after {
+	content: "|";
+	font-style: normal;
+	color: #7b7b7b;
+}
+
+.smort .footer .nav ul li:last-child:after {
+	content: none;
+}
+
+.smort .footer .copyright {
+	color: rgba(255, 255, 255, 0.3);
+	font-size: 12px;
+}
+
+.smort .footer .picture {
+	text-align: center;
+}
+
+.smort .footer .picture ul li {
+	display: inline-block;
+	padding: 10px 10px 50px 10px;
+}
