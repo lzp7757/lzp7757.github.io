@@ -1,0 +1,20 @@
+.pubble {
+  position: absolute;
+}
+.header {
+  width: 650px;
+  border: 1px solid red;
+  margin: 0 auto;
+  position: relative;
+}
+.header .turntable {
+  position: absolute;
+  top: 59px;
+  left: 116px;
+}
+.header .pointer {
+  position: absolute;
+  top: 150px;
+  left: 258px;
+}
+/*# sourceMappingURL=./choujiang.css.map */

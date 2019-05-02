@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="choujiang.css" />
+</head>
+
+<body>
+	<div class="header">
+		<img src="img/lottery-turntable-bg.jpg">
+		<img class="turntable" src="img/lottery-turntable.png">
+		<img class="pointer" src="img/lottery-pointer.png">
+	</div>
+	<script type="text/javascript">
+		var turntable = document.getElementsByClassName('turntable')[0];
+		var pointer = document.getElementsByClassName('pointer')[0];
+		var info = {
+			code: undefined,
+			text: undefined
+		};
+		var canClick = true;
+		pointer.onclick = function () {
+
+			if (canClick == true) {
+				canClick = false;
+				// 每次点击的时候重置一下角度
+				turntable.style.transition = 'all 0s'
+				turntable.style.transform = 'rotate(0deg)'
+				setTimeout(function () {
+					// 生成随机数
+					var randomNumber = Math.floor(Math.random() * 100)
+					console.log("randomNumber", randomNumber)
+					if (randomNumber < 2) {
+						info.code = 1;
+						info.text = '免单4999元'
+					} else if (randomNumber < 6) {
+						info.code = 2;
+						info.text = '免单50元'
+					} else if (randomNumber < 13) {
+						info.code = 3;
+						info.text = '免单10元'
+					} else if (randomNumber < 22) {
+						info.code = 4;
+						info.text = '免单5元'
+					} else if (randomNumber < 35) {
+						info.code = 5;
+						info.text = '免分期服务费'
+					} else if (randomNumber < 50) {
+						info.code = 6;
+						info.text = '提高白条额度'
+					} else {
+						info.code = 7;
+						info.text = '未中奖'
+					}
+					var deg = info.code * (360 / 7);
+					turntable.style.transition = "all 4s";
+					turntable.style.transform = 'rotate(' + (deg + 1080) + 'deg)'
+					console.log(info.code);
+					// 调试输出中奖信息
+				}, 10)
+
+				setTimeout(function () {
+
+					canClick = true;
+					alert(info.text)
+				}, 4000)
+				// 1s=1000ms
+			}
+		}
+	</script>
+</body>
+
+</html>
