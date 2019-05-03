@@ -24,6 +24,10 @@
 
 ### [11、轮播图和放大镜](https://lzp7757.github.io/轮播图和放大镜/)
 
-### [11、选项卡](https://lzp7757.github.io/选项卡/)
+### [12、选项卡](https://lzp7757.github.io/选项卡/)
 
-### [11、响应式](https://lzp7757.github.io/响应式/)
+### [13、响应式](https://lzp7757.github.io/响应式/)
+
+### [14、无缝轮播图](https://lzp7757.github.io/无缝轮播图/)
+
+### [15、左侧弹出菜单栏](https://lzp7757.github.io/左侧弹出菜单栏/)
