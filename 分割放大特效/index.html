@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://cdn.bootcss.com/minireset.css/0.0.2/minireset.min.css" rel="stylesheet">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="header">
+        <div class="wrap">
+            <div class="box">
+                <ul>
+                    <li><img class="s1" src="./img/a1.png" alt=""></li>
+                    <li><img class="s2" src="./img/a2.png" alt=""></li>
+                    <li><img class="s3" src="./img/a3.png" alt=""></li>
+                    <li><img class="s4" src="./img/a4.png" alt=""></li>
+                    <li><img class="s5" src="./img/a5.png" alt=""></li>
+                    <li><img class="s6" src="./img/a6.png" alt=""></li>
+                </ul>
+            </div>
+            <div class="zoom">
+                <div class="small1">
+                    <img class="a1 change1 general" src="./img/a1.png" alt="">
+                    <img class="b1 change1 general" src="./img/a2.png" alt="">
+                    <img class="c1 change1 general" src="./img/a3.png" alt="">
+                    <img class="d1 change1 general" src="./img/a4.png" alt="">
+                    <img class="e1 change1 general" src="./img/a5.png" alt="">
+                    <img class="f1 change1 general" src="./img/a6.png" alt="">
+                </div>
+                <div class="small1">
+                    <img class="a2 change2 general" src="./img/a1.png" alt="">
+                    <img class="b2 change2 general" src="./img/a2.png" alt="">
+                    <img class="c2 change2 general" src="./img/a3.png" alt="">
+                    <img class="d2 change2 general" src="./img/a4.png" alt="">
+                    <img class="e2 change2 general" src="./img/a5.png" alt="">
+                    <img class="f2 change2 general" src="./img/a6.png" alt="">
+                </div>
+
+                <div class="small1">
+                    <img class="a3 change3 general" src="./img/a1.png" alt="">
+                    <img class="b3 change3 general" src="./img/a2.png" alt="">
+                    <img class="c3 change3 general" src="./img/a3.png" alt="">
+                    <img class="d3 change3 general" src="./img/a4.png" alt="">
+                    <img class="e3 change3 general" src="./img/a5.png" alt="">
+                    <img class="f3 change3 general" src="./img/a6.png" alt="">
+                </div>
+                <div class="small1">
+                    <img class="a4 change4 general" src="./img/a1.png" alt="">
+                    <img class="b4 change4 general" src="./img/a2.png" alt="">
+                    <img class="c4 change4 general" src="./img/a3.png" alt="">
+                    <img class="d4 change4 general" src="./img/a4.png" alt="">
+                    <img class="e4 change4 general" src="./img/a5.png" alt="">
+                    <img class="f4 change4 general" src="./img/a6.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <style>
+        .general {
+            max-width: 200%;
+            position: absolute;
+            transition: all 0.5s;
+        }
+
+        .header {
+            background: #323643;
+            overflow: hidden;
+        }
+
+        .header .wrap {
+            width: 1140px;
+            margin: 0 auto;
+            margin-top: 100px;
+            margin-bottom: 200px;
+            overflow: hidden;
+        }
+
+        .header .wrap .box {
+            width: 500px;
+            overflow: hidden;
+            float: left;
+        }
+
+        .header .box img {
+            width: 33.3%;
+            float: left;
+        }
+        .header .wrap .zoom {
+            width: 600px;
+            height: 450px;
+            float: right;
+            overflow: hidden;
+        }
+
+        .header .wrap .zoom .small1 {
+            width: 50%;
+            height: 50%;
+            float: left;
+            line-height: 0;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .change1 {
+            top: 225px;
+            left: 300px;
+        }
+
+        .change2 {
+            top: 225px;
+            left: -600px;
+        }
+
+        .change3 {
+            top: -450px;
+            left: 300px;
+        }
+
+        .change4 {
+            top: -450px;
+            left: -600px;
+        }
+    </style>
+    <script>
+        var s1 = document.querySelector('.s1')
+        var a1 = document.querySelector('.a1')
+        var a2 = document.querySelector('.a2')
+        var a3 = document.querySelector('.a3')
+        var a4 = document.querySelector('.a4')
+        var s2 = document.querySelector('.s2')
+        var b1 = document.querySelector('.b1')
+        var b2 = document.querySelector('.b2')
+        var b3 = document.querySelector('.b3')
+        var b4 = document.querySelector('.b4')
+        var s3 = document.querySelector('.s3')
+        var c1 = document.querySelector('.c1')
+        var c2 = document.querySelector('.c2')
+        var c3 = document.querySelector('.c3')
+        var c4 = document.querySelector('.c4')
+        var s4 = document.querySelector('.s4')
+        var d1 = document.querySelector('.d1')
+        var d2 = document.querySelector('.d2')
+        var d3 = document.querySelector('.d3')
+        var d4 = document.querySelector('.d4')
+        var s5 = document.querySelector('.s5')
+        var e1 = document.querySelector('.e1')
+        var e2 = document.querySelector('.e2')
+        var e3 = document.querySelector('.e3')
+        var e4 = document.querySelector('.e4')
+        var s6 = document.querySelector('.s6')
+        var f1 = document.querySelector('.f1')
+        var f2 = document.querySelector('.f2')
+        var f3 = document.querySelector('.f3')
+        var f4 = document.querySelector('.f4')
+
+        function move(co1, co2, co3, co4) {
+            co1.style.left = 0 + 'px';
+            co1.style.top = 0 + 'px';
+            co2.style.left = -300 + 'px';
+            co2.style.top = 0 + 'px';
+            co3.style.left = 0 + 'px';
+            co3.style.top = -225 + 'px';
+            co4.style.left = -300 + 'px';
+            co4.style.top = -225 + 'px';
+        }
+
+        function disappear(co1, co2, co3, co4) {
+            co1.style.left = 300 + 'px';
+            co1.style.top = 225 + 'px';
+            co2.style.left = -600 + 'px';
+            co2.style.top = 225 + 'px';
+            co3.style.left = 300 + 'px';
+            co3.style.top = -450 + 'px';
+            co4.style.left = -600 + 'px';
+            co4.style.top = -450 + 'px';
+        }
+        s1.addEventListener('mouseover', function () {
+            move(a1, a2, a3, a4)
+        })
+        s1.addEventListener('mouseout', function () {
+            disappear(a1, a2, a3, a4)
+        })
+        s2.addEventListener('mouseover', function () {
+            move(b1, b2, b3, b4)
+        })
+        s2.addEventListener('mouseout', function () {
+            disappear(b1, b2, b3, b4)
+        })
+        s3.addEventListener('mouseover', function () {
+            move(c1, c2, c3, c4)
+        })
+        s3.addEventListener('mouseout', function () {
+            disappear(c1, c2, c3, c4)
+        })
+        s4.addEventListener('mouseover', function () {
+            move(d1, d2, d3, d4)
+        })
+        s4.addEventListener('mouseout', function () {
+            disappear(d1, d2, d3, d4)
+        })
+        s5.addEventListener('mouseover', function () {
+            move(e1, e2, e3, e4)
+        })
+        s5.addEventListener('mouseout', function () {
+            disappear(e1, e2, e3, e4)
+        })
+        s6.addEventListener('mouseover', function () {
+            move(f1, f2, f3, f4)
+        })
+        s6.addEventListener('mouseout', function () {
+            disappear(f1, f2, f3, f4)
+        })
+    </script>
+</body>
+
+</html>

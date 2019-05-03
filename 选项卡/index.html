@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="header">
+        <ul>
+            <li><img src="./img/image01.jpg" alt=""></li>
+            <li><img src="./img/image02.jpg" alt=""></li>
+            <li><img src="./img/image03.jpg" alt=""></li>
+            <li><img src="./img/image04.jpg" alt=""></li>
+        </ul>
+    </div>
+    <div class="stage"><img src="./img/b1.png" alt="">
+        <a class="zuo" href=""><img src="./img/zuo.png" alt=""></a>
+        <a class="you" href=""><img src="./img/you.png" alt=""></a>
+    </div>
+    <style>
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            overflow: hidden;
+        }
+        ul li {
+            width: 50px;
+            float: left;
+            border: 2px solid lightgrey;
+            padding: 2px;
+            margin: 5px;
+            cursor: url('./img/jia.png'), auto;
+            position: relative;
+        }
+
+        .header ul li.active {
+            border-color: lightcoral;
+            cursor: url('./img/jian.png'), auto;
+        }
+
+        .header ul li.active::after {
+            content: '';
+            display: block;
+            width: 0;
+            height: 0;
+            border-top: 5px solid lightcoral;
+            border-left: 5px solid transparent;
+            border-right: 5px solid transparent;
+            position: absolute;
+            bottom: -7px;
+            left: 50%;
+            margin-left: -5px;
+
+        }
+
+        .header img {
+            max-width: 100%;
+            display: block;
+        }
+
+        .header ul li:first-child {
+            margin-left: 0;
+        }
+
+        .stage {
+            width: 0;
+            transition: all 1s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .stage img {
+            max-width: 100%;
+            vertical-align: top;
+        }
+        .stage a{
+            position: absolute;
+            width: 30px;
+            transition: all 1s;
+        }
+        .stage .zuo{
+            float: left;
+            top: 50%;
+            left: -30px;
+            margin-top: -15px;
+        }
+        .stage .you{
+            top: 50%;
+            right: -30px;
+            margin-top: -15px;
+        }
+      
+        
+    </style>
+
+    <script>
+        var lis = document.querySelectorAll('.header ul li')
+        var stage = document.querySelector('.stage')
+        var icon=document.querySelectorAll('.stage a')
+
+        function display(params) {
+            lis.forEach(function (element) {
+                element.className = ''
+            });
+            stage.querySelector('img').src = params.querySelector('img').src
+            stage.style.width = '236px'
+            params.className = 'active'
+
+        }
+
+        function hidden(params) {
+            params.className = ''
+            stage.style.width='0'
+        }
+        function current () {
+            var a=Array.prototype.slice.call(lis)
+            var b=a.filter(function(element){
+                return element.className==='active'
+            })
+            return b[0]
+        }
+
+        function nextPic(){
+            var willShow
+            var currentShow=current()
+
+            if (currentShow.nextElementSibling) {
+                willShow=currentShow.nextElementSibling
+            } else {
+                willShow=lis[0]
+            }
+            display(willShow)
+        }
+
+        function prevPic(){
+            var willShow
+            var currentShow=current()
+
+            if (currentShow.previousElementSibling) {
+                willShow=currentShow.previousElementSibling
+            } else {
+                willShow=lis[lis.length-1]
+            }
+            display(willShow)
+        }
+        function reveal() {
+            icon[0].style.left='0'
+            icon[1].style.right='0'
+        }
+        function unreveal() {
+            icon[0].style.left=-30+'px'
+            icon[1].style.right=-30+'px'
+        }
+        for (var i = 0; i < lis.length; i++) {
+            lis[i].onclick = function () {
+                if (this.className==='active') {
+                    hidden(this)
+                } else {
+                    display(this)
+                }
+            }
+        }
+        icon[0].onclick=function () {
+            event.preventDefault();
+            prevPic()
+        }
+        icon[1].onclick=function () {
+            event.preventDefault();
+            nextPic()
+        }
+        stage.onmouseover=function(){
+            reveal()
+        }
+        stage.onmouseout=function(){
+            unreveal()
+        }
+    </script>
+</body>
+
+</html>

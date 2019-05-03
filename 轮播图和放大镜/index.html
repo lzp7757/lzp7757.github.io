@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<!-- <link rel="stylesheet" type="text/css" href="https://cdn.bootcss.com/minireset.css/0.0.2/minireset.min.css" /> -->
+	<!-- <link rel="stylesheet" type="text/css" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" /> -->
+	<link rel="stylesheet" type="text/css" href="slideshow.css" />
+	<title></title>
+</head>
+
+<body>
+	<div class="top">
+		<div class="header">
+			<div class="nav">
+				<li class="item1"><img src="./img/1.jpg" alt=""></li>
+				<li class="item1"><img src="./img/2.jpg" alt=""></li>
+				<li class="item1"><img src="./img/3.jpg" alt=""></li>
+				<li class="item1"><img src="./img/4.jpg" alt=""></li>
+				<li class="item1"><img src="./img/5.jpg" alt=""></li>
+				<div class="small"></div>
+			</div>
+			<div class="contrl">
+				<span>last</span>
+				<span>next</span>
+			</div>
+		</div>
+		<div class="view">
+			<img src="./img/1.jpg" alt="">
+		</div>
+	</div>
+	<script>
+		var nav = document.querySelector('.header .nav')
+		var lis = document.querySelectorAll('.header .nav li')
+		var img = document.querySelector('.header .nav img')
+		var small = document.querySelector('.header .nav .small')
+		var view = document.querySelector('.view')
+		var viewImg = document.querySelector('.view img')
+		nav.onmousemove = function (e) {
+			small.style.opacity = 1;
+			view.style.opacity = 1;
+			var x = e.pageX - 50;
+			var y = e.pageY - 50;
+			if (x > 320) {
+				x = 320
+			}
+			if (x < 0) {
+				x = 0
+			}
+			if (y > 110) {
+				y = 110
+			}
+			if (y < 0) {
+				y = 0
+			}
+			small.style.left = x + 'px'
+			small.style.top = y + 'px'
+			viewImg.style.left = -x * 4 + 'px'
+			viewImg.style.top = -y * 4 + 'px'
+
+		}
+		nav.onmouseout = function () {
+			small.style.opacity = 0;
+			view.style.opacity = 0;
+		}
+
+
+		function nextPic() {
+			var lis = document.querySelectorAll('.header .nav li')
+			lis[0].style.marginLeft = '-420px'
+			lis.forEach(function () {
+				view.querySelector('img').src = lis[1].querySelector('img').src
+
+			});
+			setTimeout(function () {
+				nav.appendChild(lis[0])
+				lis[0].style.marginLeft = '0'
+
+			}, 1000)
+
+		}
+
+		function lastPic() {
+			var lis = document.querySelectorAll('.header .nav li')
+			lis[lis.length - 1].style.marginLeft = '-420px'
+
+			nav.insertBefore(lis[lis.length - 1], lis[0])
+			//在第一个节点前插入一个新的节点
+			setTimeout(function () {
+				lis[lis.length - 1].style.marginLeft = '0'
+
+			}, 10)
+			lis.forEach(function () {
+				view.querySelector('img').src = lis[lis.length - 1].querySelector('img').src
+
+			});
+		}
+		document.querySelectorAll('.header .contrl span')[0].onclick = function () {
+			lastPic()
+		}
+		document.querySelectorAll('.header .contrl span')[1].onclick = function () {
+			nextPic()
+		}
+	</script>
+</body>
+
+</html>

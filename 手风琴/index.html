@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title></title>
+</head>
+
+<body>
+	<div class="box">
+		<li>
+			<h3>Moving Sea</h3>
+			<p>Image by Anders Adermark Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum in libero sem.
+				Fusce augue dolor, tempus et volutpat non, sagittis vitae sem. Suspendisse potenti. Quisque ac enim nec orci
+				pulvinar volutpat. Vivamus vel nisl eget mi porttitor luctus. Phasellus interdum dapibus elit, nec vehicula metus
+				sollicitudin sed. Aliquam aliquam bibendum libero, …</p>
+		</li>
+		<li>
+			<h3>Moving Sea</h3>
+			<p>Image by Anders Adermark Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum in libero sem.
+				Fusce augue dolor, tempus et volutpat non, sagittis vitae sem. Suspendisse potenti. Quisque ac enim nec orci
+				pulvinar volutpat. Vivamus vel nisl eget mi porttitor luctus. Phasellus interdum dapibus elit, nec vehicula metus
+				sollicitudin sed. Aliquam aliquam bibendum libero, …</p>
+		</li>
+		<li>
+			<h3>Moving Sea</h3>
+			<p>Image by Anders Adermark Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum in libero sem.
+				Fusce augue dolor, tempus et volutpat non, sagittis vitae sem. Suspendisse potenti. Quisque ac enim nec orci
+				pulvinar volutpat. Vivamus vel nisl eget mi porttitor luctus. Phasellus interdum dapibus elit, nec vehicula metus
+				sollicitudin sed. Aliquam aliquam bibendum libero, …</p>
+		</li>
+		<li>
+			<h3>Moving Sea</h3>
+			<p>Image by Anders Adermark Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum in libero sem.
+				Fusce augue dolor, tempus et volutpat non, sagittis vitae sem. Suspendisse potenti. Quisque ac enim nec orci
+				pulvinar volutpat. Vivamus vel nisl eget mi porttitor luctus. Phasellus interdum dapibus elit, nec vehicula metus
+				sollicitudin sed. Aliquam aliquam bibendum libero, …</p>
+		</li>
+	</div>
+	<style type="text/css">
+		body {
+			background: #000000;
+		}
+
+		.box {
+			width: 936px;
+			overflow: hidden;
+			margin: 0 auto;
+		}
+
+		li {
+			list-style: none;
+			width: 230px;
+			height: 400px;
+			float: left;
+			transition: all .5s;
+			border: 2px solid white;
+		}
+
+		.box h3,
+		p {
+			opacity: 0;
+		}
+
+		li:nth-child(1) {
+			background: url(./image/thumb-23-600x400.jpg)no-repeat;
+		}
+
+		li:nth-child(2) {
+			background: url(./image/thumb-22-600x400.jpg)no-repeat;
+		}
+
+		li:nth-child(3) {
+			background: url(./image/thumb-21.jpg)no-repeat;
+		}
+
+		li:nth-child(4) {
+			background: url(./image/thumb-20-600x400.jpg)no-repeat;
+		}
+	</style>
+	<script type="text/javascript">
+		var lis = document.getElementsByTagName('li');
+		for (var index = 0; index < lis.length; index++) {
+			// 鼠标指上去 当前的这个宽度变成600 其它都变成106
+			lis[index].onmouseover = function () {
+				for (var i = 0; i < lis.length; i++) {
+					lis[i].style.width = '106px'
+				}
+				// console.log('内部的'+index)
+				// lis[index].style.width='600px'
+				// 这里等鼠标触发事件的时候循环早就结束了 这个时候index已经是4了
+				// console.log(this)
+				// this 指向的是事件触发的时候这个事件所绑定的对象
+
+				this.style.width = '600px';
+			}
+			// 鼠标离开的时候把所有的li宽度都重置230px
+			lis[index].onmouseout = function () {
+				for (var i = 0; i < lis.length; i++) {
+					lis[i].style.width = '230px'
+				}
+			}
+		}
+	</script>
+</body>
+
+</html>

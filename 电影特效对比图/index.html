@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>电影特效对比图</title>
+</head>
+
+<body>
+    <div class="stage">
+        <img src="./image/01.jpg" alt="">
+        <div class="slider">
+            <img src="./image/02.jpg" alt="">
+
+        </div>
+        <input type="range" name="sliderway" min="0" max="100" step="1" value="50">
+    </div>
+
+    <style>
+        body {
+            margin: 0;
+        }
+
+        .stage {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .stage img {
+            width: 100%;
+            display: block;
+        }
+
+        .stage .slider {
+            width: 50%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            overflow: hidden;
+        }
+
+        .stage .slider img {
+            height: 100%;
+            width: auto;
+        }
+
+        .stage input {
+            width: 100%;
+            position: absolute;
+            height: 100%;
+            bottom: 0;
+            opacity: 0;
+        }
+    </style>
+
+    <script>
+        var stage = document.querySelector('.stage .slider')
+        document.getElementsByTagName('input')[0].oninput = function () {
+            stage.style.width = this.value + '%'
+        }
+    </script>
+</body>
+
+</html>

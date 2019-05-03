@@ -1,0 +1,75 @@
+body{
+  margin: 0;
+}
+.top{
+  position: relative;
+}
+.header {
+  width: 420px;
+  height: 250px;
+  overflow: hidden;
+  position: relative;
+}
+
+.header .nav {
+  width: 2100px;
+  overflow: hidden;
+  transition: all 0.6s;
+  position: relative;
+}
+
+.header .nav li {
+  list-style: none;
+  width: 420px;
+  height: 210px;
+  line-height: 210px;
+  float: left;
+  color: white;
+  transition: all 0.5s;
+}
+
+.header .nav .small {
+  width: 100px;
+  height: 100px;
+  background-color: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+}
+
+.header .contrl span {
+  position: absolute;
+  bottom: 0px;
+  width: 30px;
+  background: rgba(104, 58, 58, 0.137);
+  line-height: 40px;
+  padding: 0 15px;
+  color: rgb(70, 57, 57);
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.header .contrl span:first-child {
+  left: 0px;
+}
+
+.header .contrl span:last-child {
+  right: 0px;
+}
+
+.view {
+  width: 400px;
+  height: 400px;
+  vertical-align: text-bottom;
+  position: absolute;
+  overflow: hidden;
+  opacity: 0;
+}
+
+.view img {
+  width: 1680px;
+  position: absolute;
+  top: 0;
+  left: 0px;
+}

@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content ="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+<title>jQuery点击遮罩弹出幸运大转盘抽奖代码</title>
+<link rel="stylesheet" href="Animate.css">
+
+<script src="js/jquery.min.js"></script>
+<script src="js/event.js"></script>
+
+<style>
+   *{margin:0; padding:0;}
+  .luckDrawIco{position:fixed; left:20px; bottom:40px; cursor:pointer;}
+  .bodyBg{position:fixed; background-color:rgba(0,0,0,0.5); z-index:9;}
+  .wrapper{position:fixed; z-index:10;}
+  .wrapper .close{position:absolute; right:106px; top:-33px; width:37px; height:64px; cursor:pointer;}
+  .wrapper .ribbon{position:absolute; left:50%; bottom:-12px; margin-left:-166px; width:360px; height:67px; line-height:67px; background:url(luckDraw/ribbon.png) no-repeat; color:#e40600; font-size:22px; text-align:center; z-index:20;}
+  .wrapper .box{position:absolute; left:69px; top:30px; width:386px; height:386px;}
+  .wrapper .luckDraw-btn{position:absolute; left:189px; top:112px; width:146px; height:185px; cursor:pointer;}
+  .prize-box{position:fixed; width:502px; height:432px; background-image:url(luckDraw/tk_img.png); z-index:9999}
+  #prize-cont{width:140px; height:100px; margin:100px 0 0 185px; font-size:20px; color:#b01a1c; font-weight:700;}
+  .prize-box .prize-a{display:inline-block; width:220px; height:60px; margin:170px 0 0 150px;}
+  .prize-box .prizeBox-close{position:absolute; right:136px; top:-31px; width:37px; height:64px; cursor:pointer;}
+</style>
+
+<title></title>
+
+</head>
+<body>
+
+<script src="js/luckDraw.js"></script>
+
+</body>
+</html>
