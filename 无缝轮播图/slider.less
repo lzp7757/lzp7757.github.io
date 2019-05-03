@@ -1,0 +1,54 @@
+.header {
+    width: 400px;
+    overflow: hidden;
+    margin: 0 auto;
+    position: relative;
+
+    .picture {
+        width: 400%;
+        overflow: hidden;
+        margin-left: -400px;
+        li {
+            width: 400px;
+            float: left;
+
+            img {
+                max-width: 100%;
+                vertical-align: middle;
+            }
+        }
+    }
+
+    .control {
+        img {
+            position: absolute;
+            bottom: 50%;
+            margin-bottom: -30px;
+
+            &:last-child {
+                left: auto;
+                right: 0;
+            }
+        }
+    }
+
+    .dot {
+        position: absolute;
+        text-align: center;
+        bottom: 0;
+        width: 100%;
+
+        i {
+            width: 10px;
+            height: 10px;
+            background: white;
+            margin: 2px;
+            border-radius: 50%;
+            display: inline-block;
+
+            &.active {
+                background: yellowgreen;
+            }
+        }
+    }
+}

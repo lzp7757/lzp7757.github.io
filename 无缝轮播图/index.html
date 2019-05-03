@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>轮播图</title>
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
+    <link rel="stylesheet" href="slider.css">
+    <link href="https://cdn.bootcss.com/minireset.css/0.0.2/minireset.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="header">
+        <ul class="picture">
+            <li><img src="./img/1.jpg" alt=""></li>
+            <li><img src="./img/2.jpg" alt=""></li>
+            <li><img src="./img/3.jpg" alt=""></li>
+            <li><img src="./img/4.jpg" alt=""></li>
+        </ul>
+        <div class="dot"></div>
+        <div class="control">
+            <img class="prev" src="./img/prev.png" alt="">
+            <img class="next" src="./img/next.png" alt="">
+
+        </div>
+
+
+    </div>
+    <script>
+        var $lis = $('.picture li');
+        var $dot = $('.dot i');
+        var canClick = true;
+        //在dot里面添加4个i标签
+        $.each($('.picture li'), function (indexInArray, valueOfElement) {
+            $('.dot').append('<i></i>')
+        });
+        $('.dot i').first().addClass('active')
+        $('.picture li').last().prependTo('.picture')
+
+        function active(index) {
+            $('.dot i').eq(index).addClass('active').siblings().removeClass('active')
+        }
+
+        function next() {
+            $('.picture').css({
+                'transition': 'all 1s',
+                'margin-left': '-800px'
+            }).one('transitionend', function () {
+                $(this).css({
+                    'transition': 'all 0s',
+                    'margin-left': '-400px'
+                }).children().first().appendTo('.picture')
+            })
+        }
+
+        function prev() {
+            $('.picture').css({
+                'transition': 'all 1s',
+                'margin-left': '0'
+            }).one('transitionend', function () {
+                $(this).css({
+                    'transition': 'all 0s',
+                    'margin-left': '-400px'
+                }).children().last().prependTo('.picture')
+            })
+        }
+
+        function showPic(params) {
+            var cunrrent = $lis.index($('.picture li').eq(1))
+            if (cunrrent < params) {
+                if ($lis.eq(params)[0] == $('.picture li').first()[0]) {
+                    $lis.eq(params).insertAfter($('.picture li').eq(1))
+                    $('.picture li').last().prependTo('.picture')
+                } else {
+                    $lis.eq(params).insertAfter($('.picture li').eq(1))
+                }
+                next()
+            }
+            if (cunrrent > params) {
+                if ($lis.eq(params)[0] != $('.picture li').first()[0]) {
+                    $lis.eq(params).insertBefore($('.picture li').eq(1))
+                    $('.picture li').first().appendTo('.picture')
+                }
+                prev()
+            }
+        }
+
+        $('.control .next').click(function () {
+            if (canClick == true) {
+                canClick = false
+                var cunrrent = $lis.index($('.picture li').eq(1)) //当前显示图片的下标
+                var params = cunrrent + 1;
+                if (params > $lis.length - 1) {
+                    params = 0
+                }
+                if ($lis.eq(params)[0] == $('.picture li').first()[0]) {
+                    $lis.eq(params).insertAfter($('.picture li').eq(1))
+                    $('.picture li').last().prependTo('.picture')
+                } else {
+                    $lis.eq(params).insertAfter($('.picture li').eq(1))
+                }
+                next()
+                active(params)
+                setTimeout(function () {
+                    canClick = true
+                }, 1000);
+            }
+        })
+        $('.control .prev').click(function () {
+            if (canClick == true) {
+                canClick = false
+                var cunrrent = $lis.index($('.picture li').eq(1))
+                var params = cunrrent - 1;
+                if (params < 0) {
+                    params = $lis.length - 1
+                }
+                if ($lis.eq(params)[0] != $('.picture li').first()[0]) {
+                    $lis.eq(params).insertBefore($('.picture li').eq(1))
+                    $('.picture li').first().appendTo('.picture')
+                }
+                prev()
+                active(params)
+                setTimeout(function () {
+                    canClick = true
+                }, 1000);
+            }
+        })
+
+        $('.dot i').click(function () {
+            if (canClick == true) {
+                canClick = false
+                active($(this).index())
+                showPic($(this).index())
+                setTimeout(function () {
+                    canClick = true
+                }, 1000);
+            }
+        })
+    </script>
+</body>
+
+</html>
