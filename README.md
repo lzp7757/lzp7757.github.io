@@ -31,3 +31,5 @@
 ### [14、无缝轮播图](https://lzp7757.github.io/无缝轮播图/)
 
 ### [15、左侧弹出菜单栏](https://lzp7757.github.io/左侧弹出菜单栏/)
+
+### [16、travel2](https://lzp7757.github.io/TRAVEL2/)
